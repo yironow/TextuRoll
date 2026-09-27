@@ -11,17 +11,17 @@
 <canvas id="GenPlace" width="1024" height="1024" ></canvas>
 
 
-<button type="Generate">Generate</button>
+<button id="Generate" type="button">Generate</button>
 
-<script src="generator.js">
-  const canvas = document.getElementById("GenPlace")
+<script>
+  const canvas = document.getElementById("GenPlace");
   const ctx = canvas.getContext("2d");
-  const BtnG = document.getElementById("Generate"),
+  const BtnG = document.getElementById("Generate");
 
   const HW = 2
   
 
-  BtnG.AddEventListener("click", () => {
+  BtnG.addEventListener("click", () => {
 
     const PatternWood = [
         "PatternWood0.png",

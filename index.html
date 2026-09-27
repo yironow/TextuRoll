@@ -18,8 +18,38 @@
   const ctx = canvas.getContext("2d");
   const BtnG = document.getElementById("Generate"),
 
+  const HW = 2
+  
+
   BtnG.AddEventListener("click", () => {
 
+    const PatternWood = [
+        "PatternWood0.png",
+        "PatternWood1.png",
+        "PatternWood2.png",
+        "PatternWood3.png"
+    ];
+    const CelWidth = canvas.width / 2;
+    const CelHeight = canvas.height / 2;
+
+    PatternWood.forEach((Path, iN) => {
+        const img = new Image();
+        img.src = Path;
+
+        img.onload = () => {
+
+          const Columns = indice % 2;
+          const PathF = Math.floor(indice / 2);
+          
+          const x = Columns * CelWidth;
+          const y = PathF * CelHeight;
+
+
+          ctx.drawImage(img, x, y, CelHeight, CelWidth);
+        };
+    });
+});
+    
 </script>
 </body>
 </html>
